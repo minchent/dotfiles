@@ -1,4 +1,4 @@
-qsource ~/.vim/bundles.vim
+source ~/.vim/bundles.vim
 
 " encoding dectection
 set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1
@@ -8,18 +8,22 @@ filetype plugin indent on
 
 " enable syntax hightlight and completion
 syntax on
+"With a map leader it's possible to do extra key combinations
+"like <leader>w saves the current file
+let mapleader = ","
+nmap <Leader>w :w!<cr>
 
 "--------
 " Vim UI
 "--------
 " color scheme
 set background=dark
-color murphy
+color peaksea
 
 " highlight current line
 au WinLeave * set nocursorline nocursorcolumn
 au WinEnter * set cursorline cursorcolumn
-set cursorline cursorcolumn
+"set cursorline cursorcolumn
 
 " search
 set incsearch
@@ -148,6 +152,10 @@ let NERDTreeIgnore=['\~$', '\.pyc$', '\.swp$']
 " let NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$',  '\~$']
 let NERDTreeShowBookmarks=1
 let NERDTreeWinPos = "right"
+map <Leader>nn :NERDTreeToggle<cr>
+map <Leader>nb :NERDTreeFromBookmark<Space>
+map <leader>nf :NERDTreeFind<cr>
+
 
 " nerdcommenter
 let NERDSpaceDelims=1
@@ -202,11 +210,10 @@ let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
 nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 nmap <F5> :TagbarToggle<cr>
-nmap <F6> :NERDTreeToggle<cr>
 nmap <F3> :GundoToggle<cr>
 nmap <F4> :IndentGuidesToggle<cr>
 nmap  <D-/> :
-nnoremap <leader>a :Ack
+nnoremap <leader>g :Ack
 nnoremap <leader>v V`]
 
 "------------------
@@ -233,39 +240,3 @@ cmap w!! %!sudo tee >/dev/null %
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
-" sublime key bindings
-nmap <D-]> >>
-nmap <D-[> <<
-vmap <D-[> <gv
-vmap <D-]> >gv
-
-" eggcache vim
-nnoremap ; :
-:command W w
-:command WQ wq
-:command Wq wq
-:command Q q
-:command Qa qa
-:command QA qa
-
-" for macvim
-if has("gui_running")
-    set go=aAce  " remove toolbar
-    "set transparency=30
-    set guifont=Monaco:h13
-    set showtabline=2
-    set columns=140
-    set lines=40
-    noremap <D-M-Left> :tabprevious<cr>
-    noremap <D-M-Right> :tabnext<cr>
-    map <D-1> 1gt
-    map <D-2> 2gt
-    map <D-3> 3gt
-    map <D-4> 4gt
-    map <D-5> 5gt
-    map <D-6> 6gt
-    map <D-7> 7gt
-    map <D-8> 8gt
-    map <D-9> 9gt
-    map <D-0> :tablast<CR>
-endif

@@ -16,13 +16,13 @@ Bundle 'mattn/emmet-vim'
 Bundle 'Raimondi/delimitMate'
 Bundle 'ervandew/supertab'
 " snippets
-Bundle 'garbas/vim-snipmate'
-Bundle 'honza/vim-snippets'
+Bundle 'Shougo/neosnippet.vim'
 "------ snipmate dependencies -------
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
-"---------ultisnippet---------
+"----------ultisnips----------
 Bundle 'SirVer/ultisnips'
+
 "-----------------
 " Fast navigation
 "-----------------
@@ -94,21 +94,9 @@ Bundle 'kien/rainbow_parentheses.vim'
 "--------------
 " Color Schemes
 "--------------
-Bundle 'rickharris/vim-blackboard'
-Bundle 'altercation/vim-colors-solarized'
+Bundle 'fugalh/desert.vim'
+Bundle 'vim-scripts/peaksea'
 Bundle 'rickharris/vim-monokai'
-Bundle 'tpope/vim-vividchalk'
-Bundle 'Lokaltog/vim-distinguished'
 Bundle 'chriskempson/vim-tomorrow-theme'
-Bundle 'fisadev/fisa-vim-colorscheme'
 
-"------------
-"    Wildfire
-"------------
-Bundle 'gcmt/wildfire.vim'
 filetype plugin indent on     " required!
-
-"---------------
-"  markdown-prevew
-"  -------------
-Bundle 'shd101wyy/markdown-preview-enhanced'

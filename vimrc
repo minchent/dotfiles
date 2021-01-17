@@ -10,9 +10,11 @@ filetype plugin indent on
 syntax on
 "With a map leader it's possible to do extra key combinations
 "like <leader>w saves the current file
-let mapleader = ","
+let mapleader = "\<space>"
 nmap <Leader>w :w!<cr>
 
+"fold python code
+set foldmethod=indent
 "--------
 " Vim UI
 "--------
@@ -205,6 +207,9 @@ let g:SuperTabRetainCompletionType=2
 " ctrlp
 set wildignore+=*/tmp/*,*.so,*.o,*.a,*.obj,*.swp,*.zip,*.pyc,*.pyo,*.class,.DS_Store  " MacOSX/Linux
 let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
+noremap <Leader>p :CtrlP<cr>
+noremap <Leader>b :CtrlPBuffer<cr>
+
 
 " Keybindings for plugin toggle
 nnoremap <F2> :set invpaste paste?<CR>
